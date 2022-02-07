@@ -1,6 +1,6 @@
 import re
 import pandas as pd
-from bs4 import BeautifulSoup
+import bs4
 import cloudscraper
 
 fifa = {'22': 'FIFA22'}
@@ -23,7 +23,7 @@ for key, value in fifa.items():
     ID = 0
     print('Doing ' + value)
     FutBin = scraper.get('https://www.futbin.com/' + key + '/players')
-    bs = BeautifulSoup(FutBin.text, 'html.parser')
+    bs = bs4.BeautifulSoup(FutBin.text, 'html.parser')
     try:
         TotalPages = str(bs.findAll(
             'li', {'class': 'page-item '})[-1].text).strip()
@@ -35,10 +35,10 @@ for key, value in fifa.items():
     for page in range(1, 2):  # int(TotalPages) + 1):
         FutBin = scraper.get('https://www.futbin.com/'
                              + key + '/players?page=' + str(page))
-        bs = BeautifulSoup(FutBin.text, 'html.parser')
+        bs = bs4.BeautifulSoup(FutBin.text, 'html.parser')
         table = bs.find('table', {'id': 'repTb'})
         tbody = table.find('tbody')
-        extracted = tbody.findAll('tr', {'class': re.compile('player_tr_\d+')})
+        extracted = tbody.findAll('tr', {'class': re.compile('player_tr_\d')})
         Card = []
         for cardDetails in extracted:
             clubs = cardDetails.find(
