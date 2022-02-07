@@ -10,7 +10,7 @@ cardColumns = ['ID', 'Name', 'Rating', 'Position', 'Revision', 'Nation',
                'Club', 'League', 'Price | PS', 'WeakFoot', 'Skill Moves',
                'Pace', 'Shooting', 'Passing', 'Dribbling', 'Defending',
                'Phyiscality', 'Body Type', 'Weight', 'Popularity', 'BaseStats',
-               'InGameStats', 'WorkRate', 'Height', 'League']
+               'InGameStats', 'WorkRate', 'Height']
 
 C = open('FutBin_Players_Stats_FIFA_22_FUT.csv', 'w')
 C.write(','.join(cardColumns) + '\n')
