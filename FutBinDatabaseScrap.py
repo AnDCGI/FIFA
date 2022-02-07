@@ -3,13 +3,14 @@ import pandas as pd
 import bs4
 import cloudscraper
 
-fifa = {'22': 'FIFA22'}
+fifa = {'22': 'FIFA22'}     # Store Key
 
-cardColumns = ['ID', 'Name', 'Rating', 'Position', 'Revision', 'Price | PS',
-               'WeakFoot', 'Skill Moves', 'Pace', 'Shooting', 'Passing',
-               'Dribbling', 'Defending', 'Phyiscality', 'Body Type', 'Weight',
-               'Popularity', 'BaseStats', 'InGameStats', 'WorkRate', 'Height',
-               'Country', 'Club', 'League']
+# CSV Headers
+cardColumns = ['ID', 'Name', 'Rating', 'Position', 'Revision', 'Nation',
+               'Club', 'League', 'Price | PS', 'WeakFoot', 'Skill Moves',
+               'Pace', 'Shooting', 'Passing', 'Dribbling', 'Defending',
+               'Phyiscality', 'Body Type', 'Weight', 'Popularity', 'BaseStats',
+               'InGameStats', 'WorkRate', 'Height', 'League']
 
 C = open('FutBin_Players_Stats_FIFA_22_FUT.csv', 'w')
 C.write(','.join(cardColumns) + '\n')
@@ -38,38 +39,49 @@ for key, value in fifa.items():
         bs = bs4.BeautifulSoup(FutBin.text, 'html.parser')
         table = bs.find('table', {'id': 'repTb'})
         tbody = table.find('tbody')
-        extracted = tbody.findAll('tr', {'class': re.compile('player_tr_\d')})
+        extracted = tbody.findAll('tr', {'class': re.compile('player_tr_\\d')})
         Card = []
         for cardDetails in extracted:
             clubs = cardDetails.find(
                 'span', 'players_club_nation').findAll('a')
+            # Getting Clubs Information
             club = clubs[0]['data-original-title'].replace(
                 'Icons', 'unknown').strip()
+            # Getting Nation Information
             nation = clubs[1]['data-original-title'].replace(
                 'Icons', 'unknown').strip()
-            league = clubs[2]['data-original-title'].replace(
-                'Icons', 'unknown').strip()
-            if league == "unknown":
-                league = club
+            # Getting League Information
+            league = clubs[2]['data-original-title'].strip()
             name = str(cardDetails.text).strip().replace(
                 '\n', ' ').split('           ')[0]
             cardDetails = str(cardDetails.text).strip().replace('\n', ' ').replace(
                 ' \\ ', '\\').replace(' | ', '|').split('       ')[1]
-            workRate = re.search('\w\\\\\w', cardDetails,
+            # Getting Work Rate W/R
+            workRate = re.search('\\w\\\\\\w', cardDetails,
                                  re.IGNORECASE).group(0)
-            cardDetails = re.sub("\w\\\\\w", "", cardDetails)
+            # Removing W/R From cardDetails
+            cardDetails = re.sub('\\w\\\\\\w', '', cardDetails)
+            # Getting Height CM|Feet'Inch"
             match_Height = re.search(
-                "\w+\|\d\'\d+\"", cardDetails, re.IGNORECASE).group(0)
-            cardDetails = re.sub("\w+\|\d\'\d+\"", "", cardDetails)
-            position = re.findall(
-                "\s(\D*\s\D+)", cardDetails, re.IGNORECASE)[1].split()[0]
+                '\\w+\\|\\d\'\\d+\"', cardDetails, re.IGNORECASE).group(0)
+            # Removing Height CM|Feet'Inch" From cardDetails
+            cardDetails = re.sub('\\w+\\|\\d\'\\d+\"', '', cardDetails)
+            # print(cardDetails)
+            # Getting Player Preffered Position
+            position = re.findall('\\s(\\D*\\s\\D+)',
+                                  cardDetails, re.IGNORECASE)[1].split()[0]
+            cardDetails = re.sub(str(position), '', cardDetails)
             revision = re.findall(
-                "\s(\D*\s\D+)", cardDetails, re.IGNORECASE)[1].split()[1:]
+                '\\s(\\D*\\s\\D+)', cardDetails, re.IGNORECASE)[1].split()
             cardDetails = cardDetails.split()
-            cardDetails.insert(0, name)
+
             cardDetails.insert(0, id)
-            cardDetails.extend([workRate, match_Height, nation, club, league])
-            cardDetails.extend([' '.join(revision)])
+            cardDetails.insert(1, name)
+            cardDetails.insert(3, position)
+            cardDetails.insert(5, nation)
+            cardDetails.insert(6, club)
+            cardDetails.insert(7, league)
+            cardDetails.extend([workRate, match_Height])
             Card.append(cardDetails)
             print(cardDetails)
             id += 1
