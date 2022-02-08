@@ -3,6 +3,7 @@ import pandas as pd
 import bs4
 import cloudscraper
 import time
+import random
 
 fifa = {'22': 'FIFA22'}     # Store Key
 
@@ -38,6 +39,8 @@ for key, value in fifa.items():
     for page in range(1, 5):  # int(TotalPages) + 1):
         FutBin = scraper.get('https://www.futbin.com/'
                              + key + '/players?page=' + str(page))
+        # Random Number Between Range To Be Used As Delay
+        delay = random.randint(30, 60)
         bs = bs4.BeautifulSoup(FutBin.text, 'html.parser')
         table = bs.find('table', {'id': 'repTb'})
         tbody = table.find('tbody')
@@ -59,8 +62,9 @@ for key, value in fifa.items():
             league = clubs[2]['data-original-title'].strip()
             name = str(cardDetails.text).strip().replace(
                 '\n', ' ').split('           ')[0]
-            cardDetails = str(cardDetails.text).strip().replace('\n', ' ').replace(
-                ' \\ ', '\\').replace(' | ', '|').split('       ')[1]
+            cardDetails = str(cardDetails.text).strip().replace(
+                        '\n', ' ').replace(' \\ ', '\\').replace(
+                        ' | ', '|').split('       ')[1]
 
             # Getting Work Rate W/R
             workRate = re.search(r'\w\\\w', cardDetails,
@@ -130,5 +134,8 @@ for key, value in fifa.items():
 
         df = pd.DataFrame(Card)
         df.to_csv('FutBin_Players_Stats_FIFA_22_FUT.csv', mode='a',
-                  header=False, sep=',', encoding='utf-8-sig', index=False)
-        time.sleep(5)
+                  header=False, sep=',', encoding='utf-8', index=False)
+
+        # Adding Some Random Time Delay
+        print("Sleeping for", delay, "Seconds")
+        time.sleep(delay)
