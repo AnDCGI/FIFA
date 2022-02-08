@@ -2,6 +2,7 @@ import re
 import pandas as pd
 import bs4
 import cloudscraper
+import time
 
 fifa = {'22': 'FIFA22'}     # Store Key
 
@@ -129,4 +130,5 @@ for key, value in fifa.items():
 
         df = pd.DataFrame(Card)
         df.to_csv('FutBin_Players_Stats_FIFA_22_FUT.csv', mode='a',
-                  header=False, sep=',', encoding='latin1', index=False)
+                  header=False, sep=',', encoding='utf-8-sig', index=False)
+        time.sleep(5)
