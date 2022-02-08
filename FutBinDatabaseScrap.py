@@ -33,7 +33,8 @@ for key, value in fifa.items():
             'li', {'class': 'page-item'})[-2].text).strip()
     print('Number of pages to be parsed for FIFA '
           + key + ' is ' + TotalPages + ' Pages')
-    for page in range(1, int(TotalPages) + 1):
+    # Looping On All Pages
+    for page in range(1, 10):  # int(TotalPages) + 1):
         FutBin = scraper.get('https://www.futbin.com/'
                              + key + '/players?page=' + str(page))
         bs = bs4.BeautifulSoup(FutBin.text, 'html.parser')
@@ -44,33 +45,40 @@ for key, value in fifa.items():
         for cardDetails in extracted:
             clubs = cardDetails.find(
                 'span', 'players_club_nation').findAll('a')
+
             # Getting Clubs Information
             club = clubs[0]['data-original-title'].replace(
                 'Icons', 'unknown').strip()
+
             # Getting Nation Information
             nation = clubs[1]['data-original-title'].replace(
                 'Icons', 'unknown').strip()
+
             # Getting League Information
             league = clubs[2]['data-original-title'].strip()
             name = str(cardDetails.text).strip().replace(
                 '\n', ' ').split('           ')[0]
             cardDetails = str(cardDetails.text).strip().replace('\n', ' ').replace(
                 ' \\ ', '\\').replace(' | ', '|').split('       ')[1]
+
             # Getting Work Rate W/R
             workRate = re.search('\\w\\\\\\w', cardDetails,
                                  re.IGNORECASE).group(0)
             # Removing workRate From cardDetails
             cardDetails = re.sub('\\w\\\\\\w', '', cardDetails)
+
             # Getting Height CM|Feet'Inch"
             matchHeight = re.search(
                 '\\w+\\|\\d\'\\d+\"', cardDetails, re.IGNORECASE).group(0)
             # Removing matchHeight From cardDetails
             cardDetails = re.sub('\\w+\\|\\d\'\\d+\"', '', cardDetails)
+
             # Getting Player Preffered Position
             position = re.findall('\\s(\\D*\\s\\D+)',
                                   cardDetails, re.IGNORECASE)[1].split()[0]
             # Removing position From cardDetails
             cardDetails = re.sub(str(position), '', cardDetails)
+
             # Getting Player Card Revision
             revision = re.findall(
                 '\\s(\\D*\\s\\D+)', cardDetails, re.IGNORECASE)[1].split()
@@ -78,11 +86,18 @@ for key, value in fifa.items():
             revision = (' '.join(revision))     # Now a String
             # Removing revision From cardDetails
             cardDetails = re.sub(revision, '', cardDetails)
+
             # Getting Body Type
-            bodyType = re.search(r'\s{6}(\w.+?)\s{2}', cardDetails).group(1)
+            bodyType = re.search(r'\s{6}(\w.+?)\s{2}', cardDetails)
+            # Some Data Missing, So Fail Safe
+            if bodyType is None:
+                bodyType = 'No Data in FutBin'      # Continue Loop
+            else:
+                bodyType = bodyType.group(1)
             # Removing bodyType From cardDetails
             cardDetails = re.sub(bodyType, '', cardDetails)
             cardDetails = cardDetails.split()
+
             # Insert Tables At Proper ID
             cardDetails.insert(0, id)
             cardDetails.insert(1, name)
