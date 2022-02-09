@@ -36,11 +36,11 @@ for key, value in fifa.items():
     print('Number of pages to be parsed for FIFA '
           + key + ' is ' + TotalPages + ' Pages')
     # Looping On All Pages
-    for page in range(1, 5):  # int(TotalPages) + 1):
+    for page in range(1, int(TotalPages) + 1):
         FutBin = scraper.get('https://www.futbin.com/'
                              + key + '/players?page=' + str(page))
         # Random Number Between Range To Be Used As Delay
-        delay = random.randint(30, 60)
+        delay = random.randint(15, 60)
         bs = bs4.BeautifulSoup(FutBin.text, 'html.parser')
         table = bs.find('table', {'id': 'repTb'})
         tbody = table.find('tbody')
