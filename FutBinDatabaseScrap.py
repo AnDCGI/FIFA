@@ -5,6 +5,9 @@ import cloudscraper
 import time
 import random
 import statistics
+import sys
+import tqdm
+from progress.bar import Bar
 
 fifa = {'22': 'FIFA22'}     # Store Key
 
@@ -37,14 +40,24 @@ for key, value in fifa.items():
             'li', {'class': 'page-item'})[-2].text).strip()
     print('Number of pages to be parsed for FIFA '
           + key + ' is ' + TotalPages + ' Pages')
+    delay_prev = 0
+    bar = Bar('Computing...', max=20)
     # Looping On All Pages
-    for page in range(1, 5): #int(TotalPages) + 1):
+    for page in range(1, 5):  # int(TotalPages) + 1):
         FutBin = scraper.get('https://www.futbin.com/'
                              + key + '/players?page=' + str(page))
+
         # Random Number Between Range To Be Used As Delay
         delay = random.randint(15, 60)
-        delay_mean = statistics.mean(15,60)
-        tt = (TotalPages-page) * delay_mean
+
+        delay_mean = (15 + 60) / 2
+        if page == 1:
+            tt = int(TotalPages) * delay_mean
+            print(tt)
+        else:
+            tt = tt-delay_prev
+            print(tt)
+        delay_prev = delay
         bs = bs4.BeautifulSoup(FutBin.text, 'html.parser')
         table = bs.find('table', {'id': 'repTb'})
         tbody = table.find('tbody')
@@ -135,12 +148,24 @@ for key, value in fifa.items():
             Card.append(cardDetails)
             print(cardDetails)
             id += 1
-
+            bar.next()
         df = pd.DataFrame(Card)
         df.to_csv('FutBin_Players_Stats_FIFA_22_FUX.csv', mode='a',
                   header=False, sep=',', encoding='utf-8', index=False)
 
         # Adding Some Random Time Delay
-        print("Sleeping for", delay, "Seconds")
+        #print("Sleeping for", delay, "Seconds")
+
+        #time.sleep(delay)
+        # for i in tqdm(range(10)):
+        bar.finish()
         time.sleep(delay)
-        print(tt)
+
+        # total = 100000
+        # point = total/100
+        # increment = total/20
+        # for i in range(total):
+        #     if(i % (5*point) == 0):
+        #         sys.stdout.write(
+        #             "\r["+"="*(i/increment)+""*((total-i)/increment)+"]"+(i/point) + "%")
+        #         sys.stdout.flush()
