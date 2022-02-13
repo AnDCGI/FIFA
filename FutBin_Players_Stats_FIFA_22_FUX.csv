@@ -1,0 +1,61 @@
+ID,Name,Rating,Position,Revision,Nation,Club,League,Price | PS,WeakFoot,Skill Moves,Pace,Shooting,Passing,Dribbling,Defending,Phyiscality,Body Type,Weight,Height,WorkRate,Popularity,BaseStats,InGameStats
+0,Pelé,98,CAM,Icon,Brazil,FUT 22 ICONS,Icons,4.72M,5,4,95,96,93,96,60,76,Unique,70kg,"173cm|5'8""",H\M,906,516,2513
+1,Robert Lewandowski,98,ST,TOTY,Poland,FC Bayern,Bundesliga,645K,4,4,93,98,87,95,50,95,Unique,81kg,"185cm|6'1""",H\M,12157,518,2500
+2,Lionel Messi,98,RW,TOTY,Argentina,Paris SG,Ligue 1,2.94M,4,4,93,97,98,99,40,76,Messi,72kg,"170cm|5'7""",M\L,2361,503,2451
+3,Diego Maradona,97,CAM,Icon,Argentina,FUT 22 ICONS,Icons,2.67M,5,3,92,93,92,97,40,76,Maradona,70kg,"165cm|5'5""",H\M,470,490,2392
+4,Kylian Mbappé,97,ST,TOTY,France,Paris SG,Ligue 1,5.89M,5,4,99,95,90,98,44,88,Unique,73kg,"182cm|6'0""",H\L,-8573,514,2457
+5,Luiz Frello Filho Jorge,97,CM,TOTY,Italy,Chelsea,Premier League,869K,4,4,88,90,98,93,86,87,Lean,68kg,"180cm|5'11""",M\M,-3530,542,2620
+6,Rúben Dias,97,CB,TOTY,Portugal,Manchester City,Premier League,781K,2,4,87,50,84,81,97,96,High & Average,82kg,"187cm|6'2""",M\H,4671,495,2310
+7,Cristiano Ronaldo,97,ST,TOTY,Portugal,Manchester Utd,Premier League,5.2M,5,4,93,98,88,95,39,92,CR7,83kg,"187cm|6'2""",H\L,1591,505,2445
+8,Ronaldo,96,ST,Icon,Brazil,FUT 22 ICONS,Icons,8.7M,5,5,97,95,81,95,45,76,R9,78kg,"183cm|6'0""",M\M,1545,489,2341
+9,Zinedine Zidane,96,CAM,Icon,France,FUT 22 ICONS,Icons,2.56M,5,5,85,92,96,95,75,86,Average,77kg,"185cm|6'1""",M\M,446,529,2548
+10,Kevin De Bruyne,96,CM,TOTY,Belgium,Manchester City,Premier League,1.68M,4,5,86,92,98,93,80,88,Unique,70kg,"181cm|5'11""",H\H,1972,537,2587
+11,N'Golo Kanté,96,CDM,TOTY,France,Chelsea,Premier League,3.08M,3,3,90,84,90,91,96,90,Unique,70kg,"168cm|5'6""",M\H,8911,541,2551
+12,Gianluigi Donnarumma,96,GK,TOTY,Italy,Paris SG,Ligue 1,163K,1,3,98,90,90,97,63,92,Unique,90kg,"196cm|6'5""",M\M,-2286,530,1040
+13,Diego Maradona,95,CAM,Icon,Argentina,FUT 22 ICONS,Icons,1.54M,5,3,88,91,90,95,42,75,Maradona,72kg,"165cm|5'5""",H\M,580,481,2357
+14,Pelé,95,CF,Icon,Brazil,FUT 22 ICONS,Icons,3.88M,5,4,96,93,90,95,56,75,Unique,69kg,"173cm|5'8""",H\M,850,505,2452
+15,Lionel Messi,95,RW,OTW,Argentina,Paris SG,Ligue 1,1.9M,4,4,88,94,93,97,36,70,Messi,72kg,"170cm|5'7""",M\L,2771,478,2332
+16,Marquinhos,95,CB,TOTY,Brazil,Paris SG,Ligue 1,1.3M,3,3,90,61,85,86,97,90,Average,75kg,"183cm|6'0""",M\H,-352,509,2382
+17,Ferenc Puskás,94,CF,Icon,Hungary,FUT 22 ICONS,Icons,1.79M,4,3,91,96,91,92,46,76,Stocky,72kg,"172cm|5'8""",H\M,547,492,2396
+18,Johan Cruyff,94,CF,Icon,Netherlands,FUT 22 ICONS,Icons,4.17M,5,5,91,92,91,94,42,73,Lean,71kg,"180cm|5'11""",H\L,559,483,2339
+19,Lev Yashin,94,GK,Icon,Russia,FUT 22 ICONS,Icons,629K,1,3,95,89,75,96,60,95,High & Average,82kg,"189cm|6'2""",M\M,364,510,1320
+20,Mané Garrincha,94,RW,Icon,Brazil,FUT 22 ICONS,Icons,1.56M,5,4,90,87,94,96,41,68,Short & Lean-,72kg,"169cm|5'7""",M\L,214,476,2301
+21,Paolo Maldini,94,CB,Icon,Italy,FUT 22 ICONS,Icons,1.82M,2,4,86,56,75,69,96,83,Average,83kg,"186cm|6'1""",M\H,443,465,2140
+22,Ronaldinho,94,LW,Icon,Brazil,FUT 22 ICONS,Icons,4.2M,5,4,92,90,91,95,37,81,Ronaldinho,78kg,"180cm|5'11""",H\L,761,486,2328
+23,Ronaldo,94,ST,Icon,Brazil,FUT 22 ICONS,Icons,5.39M,5,5,93,93,80,93,46,80,R9,82kg,"183cm|6'0""",M\L,2029,485,2321
+24,Zinedine Zidane,94,CAM,Icon,France,FUT 22 ICONS,Icons,1.62M,5,5,82,90,93,92,72,83,High & Average,82kg,"185cm|6'1""",M\M,634,512,2474
+25,Lionel Messi,94,RW,IF,Argentina,Paris SG,Ligue 1,850K,4,4,86,93,92,96,35,68,Messi,72kg,"170cm|5'7""",M\L,-367,470,2298
+26,João Cancelo,94,LB,TOTY,Portugal,Manchester City,Premier League,748K,4,5,95,85,91,93,90,87,Unique,74kg,"182cm|6'0""",H\M,6489,541,2566
+27,Mohamed Salah,94,RW,TOTY Honourable Ment,Egypt,Liverpool,Premier League,975K,4,3,95,93,90,95,51,84,Salah,71kg,"175cm|5'9""",H\M,1349,508,2450
+28,Carlos Alberto Torres,93,RB,Icon,Brazil,FUT 22 ICONS,Icons,520K,3,4,90,66,81,86,90,87,Average,76kg,"180cm|5'11""",H\M,139,500,2324
+29,Éric Cantona,93,CF,Icon,France,FUT 22 ICONS,Icons,2.01M,5,4,89,93,90,93,53,92,High & Average,89kg,"188cm|6'2""",H\M,357,510,2476
+30,Eusébio,93,CF,Icon,Portugal,FUT 22 ICONS,Icons,3.6M,4,5,94,94,86,93,45,79,Average,76kg,"175cm|5'9""",H\M,360,491,2398
+31,Franco Baresi,93,CB,Icon,Italy,FUT 22 ICONS,Icons,173K,2,3,70,49,76,72,95,82,Average,70kg,"176cm|5'9""",M\H,11,444,2131
+32,George Best,93,RW,Icon,Northern Ireland,FUT 22 ICONS,Icons,1.2M,4,4,93,91,84,94,58,71,Lean,65kg,"175cm|5'9""",M\M,293,491,2370
+33,Lothar Matthäus,93,CM,Icon,Germany,FUT 22 ICONS,Icons,2.1M,3,4,89,89,90,82,90,85,Average,71kg,"174cm|5'9""",H\H,303,525,2544
+34,Marco van Basten,93,ST,Icon,Netherlands,FUT 22 ICONS,Icons,198K,3,4,83,94,76,89,39,75,High & Average+,78kg,"188cm|6'2""",M\M,157,456,2231
+35,Roberto Baggio,93,CAM,Icon,Italy,FUT 22 ICONS,Icons,400K,5,4,86,84,92,92,40,61,Unique,73kg,"174cm|5'9""",M\L,214,455,2217
+36,Ruud Gullit,93,CF,Icon,Netherlands,FUT 22 ICONS,Icons,4M,4,5,86,91,91,89,82,90,Unique,88kg,"191cm|6'3""",H\M,553,529,2566
+37,Thierry Henry,93,ST,Icon,France,FUT 22 ICONS,Icons,1.49M,4,4,94,91,83,90,53,80,High & Average,83kg,"188cm|6'2""",M\M,318,491,2332
+38,Xavier Hernández,93,CM,Icon,Spain,FUT 22 ICONS,Icons,580K,4,3,81,80,95,93,72,72,Short & Lean-,67kg,"170cm|5'7""",H\H,566,493,2391
+39,Marcos Cafú,93,RWB,Icon,Brazil,FUT 22 ICONS,Icons,929K,4,3,92,58,85,88,91,86,No Data,No Data,"176cm|5'9""",H\M,445,500,2365
+40,Lionel Messi,93,RW,Rare,Argentina,Paris SG,Ligue 1,219K,4,4,85,92,91,95,34,65,Messi,72kg,"170cm|5'7""",M\L,9651,462,2261
+41,Kevin De Bruyne,93,CAM,Signature Signings,Belgium,Manchester City,Premier League,538K,4,5,80,88,95,91,67,82,Unique,70kg,"181cm|5'11""",H\H,1775,503,2437
+42,Robert Lewandowski,93,ST,TOTGS,Poland,FC Bayern,Bundesliga,96K,4,4,80,94,80,88,45,83,Unique,81kg,"185cm|6'1""",H\M,2080,470,2292
+43,Neymar Jr,93,ST,Winter Wildcards,Brazil,Paris SG,Ligue 1,3.58M,5,5,93,87,88,96,39,66,Neymar,68kg,"175cm|5'9""",H\M,2914,469,2297
+44,Robert Lewandowski,93,ST,IF,Poland,FC Bayern,Bundesliga,87.5K,4,4,80,93,81,87,45,83,Unique,81kg,"185cm|6'1""",H\M,656,469,2286
+45,Kylian Mbappé,93,ST,Headliners,France,Paris SG,Ligue 1,4.47M,5,4,99,90,84,94,39,80,Unique,73kg,"182cm|6'0""",H\L,-198,486,2300
+46,Mohamed Salah,93,RW,Headliners,Egypt,Liverpool,Premier League,1.12M,4,3,94,92,88,94,50,82,Salah,71kg,"175cm|5'9""",H\M,1365,500,2396
+47,Achraf Hakimi,93,RB,TOTY,Morocco,Paris SG,Ligue 1,634K,3,4,99,80,88,91,90,90,Lean,73kg,"181cm|5'11""",H\M,-2371,538,2500
+48,Harry Kane,93,ST,Flashback SBC,England,Spurs,Premier League,549.25K,3,5,88,94,87,88,51,86,Unique,89kg,"188cm|6'2""",H\H,-3414,494,2398
+49,Jude Bellingham,93,CM,FUT Future Stars,England,Dortmund,Bundesliga,1.72M,4,4,88,85,88,93,88,91,High & Average+,75kg,"186cm|6'1""",H\H,2737,533,2556
+50,Pedro González López,93,CM,FUT Future Stars,Spain,FC Barcelona,LaLiga Santander,0,5,4,90,84,93,95,85,78,Lean,61kg,"174cm|5'9""",H\H,2807,525,2500
+51,Alessandro Del Piero,92,CF,Icon,Italy,FUT 22 ICONS,Icons,299K,4,5,83,92,89,92,43,67,Unique,74kg,"174cm|5'9""",M\M,167,466,2265
+52,Alessandro Nesta,92,CB,Icon,Italy,FUT 22 ICONS,Icons,189K,2,3,72,42,65,67,94,86,Unique,79kg,"187cm|6'2""",M\H,40,426,1939
+53,Andrea Pirlo,92,CM,Icon,Italy,FUT 22 ICONS,Icons,290K,5,4,73,80,95,91,71,67,Lean,67kg,"177cm|5'10""",M\M,132,477,2347
+54,Bobby Moore,92,CB,Icon,England,FUT 22 ICONS,Icons,140K,2,3,68,64,83,78,93,85,Average,72kg,"178cm|5'10""",M\M,-37,471,2318
+55,Carles Puyol Saforcada,92,CB,Icon,Spain,FUT 22 ICONS,Icons,200K,2,3,70,45,68,58,94,90,Stocky,80kg,"178cm|5'10""",M\H,42,425,2016
+56,David Beckham,92,RM,Icon,England,FUT 22 ICONS,Icons,365K,3,3,80,87,95,88,69,82,Average,74kg,"182cm|6'0""",H\H,145,501,2464
+57,Dennis Bergkamp,92,CF,Icon,Netherlands,FUT 22 ICONS,Icons,220K,4,4,84,91,86,90,37,78,Average,78kg,"183cm|6'0""",M\M,126,466,2272
+58,Emilio Butragueño,92,ST,Icon,Spain,FUT 22 ICONS,Icons,1.2M,3,5,94,90,80,92,41,68,Lean,68kg,"168cm|5'6""",M\L,425,465,2245
+59,Fabio Cannavaro,92,CB,Icon,Italy,FUT 22 ICONS,Icons,456K,2,3,80,43,63,68,95,85,Average,74kg,"176cm|5'9""",L\H,187,434,2065
