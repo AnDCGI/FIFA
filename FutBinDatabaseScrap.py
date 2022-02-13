@@ -14,7 +14,7 @@ cardColumns = ['ID', 'Name', 'Rating', 'Position', 'Revision', 'Nation',
                'Phyiscality', 'Body Type', 'Weight', 'Height', 'WorkRate',
                'Popularity', 'BaseStats', 'InGameStats']
 
-C = open('FutBin_Players_Stats_FIFA_22_FUT.csv', 'w')
+C = open('FutBin_Players_Stats_FIFA_22_FU.csv', 'w')
 C.write(','.join(cardColumns) + '\n')
 C.close()
 
@@ -133,7 +133,7 @@ for key, value in fifa.items():
             id += 1
 
         df = pd.DataFrame(Card)
-        df.to_csv('FutBin_Players_Stats_FIFA_22_FUT.csv', mode='a',
+        df.to_csv('FutBin_Players_Stats_FIFA_22_FU.csv', mode='a',
                   header=False, sep=',', encoding='utf-8', index=False)
 
         # Adding Some Random Time Delay
