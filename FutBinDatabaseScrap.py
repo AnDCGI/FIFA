@@ -4,6 +4,7 @@ import bs4
 import cloudscraper
 import time
 import random
+import statistics
 
 fifa = {'22': 'FIFA22'}     # Store Key
 
@@ -14,12 +15,13 @@ cardColumns = ['ID', 'Name', 'Rating', 'Position', 'Revision', 'Nation',
                'Phyiscality', 'Body Type', 'Weight', 'Height', 'WorkRate',
                'Popularity', 'BaseStats', 'InGameStats']
 
-C = open('FutBin_Players_Stats_FIFA_22_FU.csv', 'w')
+C = open('FutBin_Players_Stats_FIFA_22_FUX.csv', 'w')
 C.write(','.join(cardColumns) + '\n')
 C.close()
 
 scraper = cloudscraper.create_scraper(
     browser={'browser': 'firefox', 'platform': 'windows', 'mobile': False})
+
 
 for key, value in fifa.items():
     id = 0
@@ -36,11 +38,13 @@ for key, value in fifa.items():
     print('Number of pages to be parsed for FIFA '
           + key + ' is ' + TotalPages + ' Pages')
     # Looping On All Pages
-    for page in range(1, int(TotalPages) + 1):
+    for page in range(1, 5): #int(TotalPages) + 1):
         FutBin = scraper.get('https://www.futbin.com/'
                              + key + '/players?page=' + str(page))
         # Random Number Between Range To Be Used As Delay
         delay = random.randint(15, 60)
+        delay_mean = statistics.mean(15,60)
+        tt = (TotalPages-page) * delay_mean
         bs = bs4.BeautifulSoup(FutBin.text, 'html.parser')
         table = bs.find('table', {'id': 'repTb'})
         tbody = table.find('tbody')
@@ -133,9 +137,10 @@ for key, value in fifa.items():
             id += 1
 
         df = pd.DataFrame(Card)
-        df.to_csv('FutBin_Players_Stats_FIFA_22_FU.csv', mode='a',
+        df.to_csv('FutBin_Players_Stats_FIFA_22_FUX.csv', mode='a',
                   header=False, sep=',', encoding='utf-8', index=False)
 
         # Adding Some Random Time Delay
         print("Sleeping for", delay, "Seconds")
         time.sleep(delay)
+        print(tt)
